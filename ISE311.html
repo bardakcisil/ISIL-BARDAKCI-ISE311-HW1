@@ -10,42 +10,69 @@
     <style>
         
         body{
-            
-            background-color: white;
+            text-align: center;
+            position= fixed;
+            overflow-y: scroll;
+            background-color:grey;
             color: rgb(59, 2, 37);
             /*background-image: url("atilim.png");*/
             background-size: cover;
             text-align: begin;
         }
         
+        .head{
+            position: absolute;
+            top: calc(50%-35px);
+            left: calc(50%-255px);
+        }
+
         .login{
-            width: 250px;
-            height: 30px;
-            background-color: rgb(252, 0, 210);
+            text-align: center;
+            background-color: rgb(216, 131, 202);
             color: rgb(59, 2, 37);
             text-align: center;
-            font-size: 20px;
-            padding: 5;
+            font-size: 25px;
+            
         }
         
-        .input [type=text]{
-            width: 250px;
-            height: 30px;
-            background:rgb(252, 0, 210);
+        .login input[type=text]{
+            text-align: center;
+            background:white;
             color:rgb(59, 2, 37);
-            padding: 5;
+            
 
+        }
+
+
+        .login input[type=password]{
+            text-align: center ;
+            background:white;
+            color:rgb(59, 2, 37);
+            
+        }
+
+        .login input[type=button]{
+            text-align: center;
+            background:white;
+            color:rgb(59, 2, 37);
+            
         }
         
     </style> 
     </head>
     <body>
-        <div class="body"></div>
-        <div class=
+        
     <h2> atilim registration cart</h2>
     <h3> login for lesson packages and registration cart simulation</h3>
     <p text-align: center;>login with username and pasword</p>
-    <button class=login" type="button" onclick="login()">Login</button>
+    <form name="login">
+    <div class="login">
+        <input type="text" placeholder="username" name="userid"><br>
+        <input type="password" placeholder="password" name="pswrd"><br>
+        <input type="button" onclick="check(this.form)" value="Login"><br>
+    </div>
+    </form>
+    
 </body>
 
 
