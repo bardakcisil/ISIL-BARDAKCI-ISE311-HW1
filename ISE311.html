@@ -8,55 +8,54 @@
          
 
     <style>
+
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin:0;
+        }
         
         body{
+
             text-align: center;
-            position= fixed;
-            overflow-y: scroll;
             background-color:grey;
             color: rgb(59, 2, 37);
-            /*background-image: url("atilim.png");*/
-            background-size: cover;
-            text-align: begin;
         }
         
-        .head{
-            position: absolute;
-            top: calc(50%-35px);
-            left: calc(50%-255px);
-        }
-
-        .login{
-            text-align: center;
-            background-color: rgb(216, 131, 202);
-            color: rgb(59, 2, 37);
-            text-align: center;
-            font-size: 25px;
-            
-        }
+        #result{
+            width: 100%;
+            height: 40px;
+            line-height: 30px;
+            text-align:center;
+            background-color:hotpink;
+            color:blueviolet;
+            font-size:15px;
+            padding:5px;
+            }
         
-        .login input[type=text]{
-            text-align: center;
-            background:white;
-            color:rgb(59, 2, 37);
-            
+            .clear{
+                clear:both;
+            }
+            input{
+                float: left;
+                width:calc(100% / 3 - 10px);
+                height:40px;
+                line-height:40px;
+                font-size:15px;
+                text-align: center;
+                margin: 5px;
+            }
+            input[type="text"],
+            input[type="paswword"]{
+                border:1px solid grey;
+            }
+            input[type="button"]{
+                background-color:hotpink;
+                border:1px solid hotpink;
+                color:rgb(59, 2, 37);
+            }
 
-        }
-
-
-        .login input[type=password]{
-            text-align: center ;
-            background:white;
-            color:rgb(59, 2, 37);
-            
-        }
-
-        .login input[type=button]{
-            text-align: center;
-            background:white;
-            color:rgb(59, 2, 37);
-            
-        }
+        #accounts
         
     </style> 
     </head>
@@ -65,13 +64,16 @@
     <h2> atilim registration cart</h2>
     <h3> login for lesson packages and registration cart simulation</h3>
     <p text-align: center;>login with username and pasword</p>
-    <form name="login">
-    <div class="login">
-        <input type="text" placeholder="username" name="userid"><br>
-        <input type="password" placeholder="password" name="pswrd"><br>
-        <input type="button" onclick="check(this.form)" value="Login"><br>
+
+    <div id="form">
+     <input type="text" id="user_name" placeholder="username"/>
+     <input type ="password" id="user_pass" placeholder="password"/>
+     <input type="button" id="btn" value="Login">
     </div>
-    </form>
+    <br />
+    <div class="clear"></div>
+    <div id="result"></div>
+    
     
 </body>
 
