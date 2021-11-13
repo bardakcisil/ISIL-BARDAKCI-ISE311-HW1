@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>
+            Atilim Kayit Sepeti Login
+        </title>
+    <style>
+        *{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    
+    background-color:rgb(60,0,128);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    min-height:100vh;
+    
+}
+
+
+
+form{
+    
+    background-color:purple;
+    padding: 20px;
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    border-radius: 8px;
+    width:300px;
+    height:400px
+	
+    
+}
+
+
+
+form h2{
+	margin-top:20px;
+	font-size: 55px;
+	color: rgb(204, 122, 224);
+	margin-bottom: 30px;
+}
+
+form input{
+	border: none;
+	background:none;
+	text-align:center;
+	outline:none;
+	color: rgb(204, 122, 224);
+	margin: 20px;
+	height:30px;
+	width: 70%;
+	border-radius: 40px;
+	transition: 0.2s linear;
+}
+
+form input[type="text"], form input[type="password"]{
+	border: solid 2px yellowgreen;
+}
+
+form input[type="submit"]{
+	border: solid 2px rgb(204, 122, 224);
+	box-sizing: border-box;
+	height:50px;
+	width:40%;
+	cursor: pointer;
+
+}
+
+form input[type="text"]:focus, form input[type="password"]:focus{
+	width: 80%;
+	border: solid 2px yellowgreen;
+}
+
+form input[type="submit"]:hover{
+	background:yellowgreen;
+	color:rgb(60,0,128);
+
+}
+
+    </style>
+   </head>
+	
+	<body>
+        
+        <form action="">
+	    <h2>Login</h2>
+             <input type="text" id="username" placeholder="username" autocomplete="false">
+             <input type ="password" id="password" placeholder="password">
+             <input type="submit" id="btn" value="Login" onclick="getInfo()" >
+            </form>
+        <script>
+            
+     var loginedOnes = [
+	{ // Object @ 0 index
+		username: "isil",
+		password: "1111"
+	},
+	{ // Object @ 1 index
+		username: "damla",
+		password: "2222"
+	},
+	{ // Object @ 2 index
+		username: "semra",
+		password: "3333"
+	}
+
+];
+
+function getInfo() {
+	var username = document.getElementById('username').value;
+	var password = document.getElementById('password').value;
+
+	for(var i = 0; i < loginedOnes.length; i++) {
+		// check is user input matches username and password of a current index of the objPeople array
+		if(username == loginedOnes[i].username && password == loginedOnes[i].password) {
+			alert("Welcome "+ username +" whats up?!");
+           // console.log(username + " is logged in!!!");
+			// stop the function if this is found to be true
+			return;
+		}
+	}
+    alert("Sorry we couldnt recognize you. BYE :(");
+	//console.log("incorrect username or password");
+}
+
+        </script>
+   
+	</body>
+</html>
