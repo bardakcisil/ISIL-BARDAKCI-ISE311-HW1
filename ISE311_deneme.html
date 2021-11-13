@@ -18,7 +18,7 @@ body{
     color: rgb(59, 2, 37);
 }
 
-#result{
+    #result{
     width: 100%;
     height: 40px;
     line-height: 30px;
@@ -53,7 +53,7 @@ body{
 
 #accounts > div > div:first-of-type,
 #content > div:first-of-type{
-        
+        /* display: inline-block;*/
         width:calc(100% / 2 - 4px);
         float:left;
         padding:5px;
@@ -65,7 +65,7 @@ body{
 
 #accounts > div > div:last-of-type,
 #content > div:last-of-type{
-        
+       /* display: inline-block;*/
         width:calc(100% / 2 - 4px);
         float:left;
         padding:5px;
@@ -83,8 +83,8 @@ body{
         
             <div id="form">
              <input type="text" id="user_name" placeholder="username"/>
-             <input type ="password" id="user_pass" placeholder="password"/>
-             <input type="button" id="loginbtn" value="Login">
+             <input type ="paswword" id="user_pass" placeholder="password"/>
+             <input type="button" id="btn" value="Login" >
             </div>
         
             <div id="userNameAndPassword">
@@ -101,15 +101,34 @@ body{
             
             <script>
             var loginedUsers=Array("isil","damla","semra"),//[],
-            loginedUsersPsw=("1","2","3"),//[],
+            loginedUsersPsw=Array("1111","2222","3333"),//[],
             UAP = $("#userNameAndPassword");
     
-       for (var i = 0; i < loginedUsers.length; i++)
-        {
-           var user_names = loginedUsers[i];
-           var user_psws = loginedUsersPsw[i];
-           $("#accounts").append("<div><div>"+ user_names +"</div><div>"+ user_psws+"</div></div>");
-        }
+            for (var i = 0; i < loginedUsers.length; i++)
+             {
+                 var user_names = loginedUsers[i];
+                var user_psws = loginedUsersPsw[i];
+                $("#accounts").append("<div><div>"+ user_names +"</div><div>"+ user_psws+"</div></div>");
+            }
+            $("#btn").click (function (){
+            var user_name = $("#user_name").val(),
+            user_pass = $("#user_pass").val(),
+            btn = $("#btn"),
+            result = $("#result");
+  
+            if($.inArray(user_name, available_user_name) >= 0){
+                if(available_user_name.indexOf(user_name) == available_user_pass.indexOf(user_pass)){
+                 result.html("You're welcome : "+ user_name);
+                result.css({"color":"white","background-color":"SeaGreen","border":"1px solid Teal"});
+                 }else{
+                result.html("You're selected wrong password for username, please try again");
+                 result.css({"color":"white","background-color":"DarkRed","border":"1px solid FireBrick"});
+                  }
+                }else{
+                 result.html("This name doesn't registred with us");
+                result.css({"color":"white","background-color":"DarkRed","border":"1px solid FireBrick"});
+    }
+});
             </script>
             </body>
     </head>
