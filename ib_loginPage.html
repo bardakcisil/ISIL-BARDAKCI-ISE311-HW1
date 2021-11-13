@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title>
+            Atilim Kayit Sepeti Login
+        </title>
+       <style>
+           *{
+                box-sizing: border-box;
+                padding: 0;
+                margin:0;
+            }
+
+            body{
+                     text-align:center;
+                     background-color:grey;
+                     color: rgb(59, 2, 37);
+                }
+
+                input{
+                        float: left;
+                        width:calc(100% / 3 - 10px);
+                        height:40px;
+                        line-height:40px;
+                        font-size:15px;
+                        text-align: center;
+                        margin: 5px;
+                        }
+
+                input[type="text"],
+                input[type="paswword"]{
+                                                  border:1px solid grey;
+                                             }
+                 input[type="button"]{
+                                  background-color:hotpink;
+                                  border:1px solid hotpink;
+                                  color:rgb(59, 2, 37);
+                                        }
+       </style>
+	</head>
+
+	<body>
+		<form>
+			<input type="text" id="username" placeholder="Username">
+			<input type="paswword" id="password" placeholer="Password"/>
+			<input type="button" id="loginbtn" value="Login" onclick="getInfo()">
+		</form>
+
+
+		<script >
+            var loginedOnes = [
+	{ // Object @ 0 index
+		username: "isil",
+		password: "1111"
+	},
+	{ // Object @ 1 index
+		username: "damla",
+		password: "2222"
+	},
+	{ // Object @ 2 index
+		username: "semra",
+		password: "3333"
+	}
+
+]
+
+function getInfo() {
+	var username = document.getElementById('username').value
+	var password = document.getElementById('password').value
+
+	for(var i = 0; i < loginedOnes.length; i++) {
+		// check is user input matches username and password of a current index of the objPeople array
+		if(username == loginedOnes[i].username && password == loginedOnes[i].password) {
+			console.log(username + " is logged in!!!")
+			// stop the function if this is found to be true
+			return
+		}
+	}
+	console.log("incorrect username or password")
+}
+        </script>
+	</body>
+</html>
