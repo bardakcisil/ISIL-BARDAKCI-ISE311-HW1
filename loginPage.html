@@ -116,13 +116,15 @@ form input[type="submit"]:hover{
 
 				for(var i = 0; i < loginedOnes.length; i++) {
 				// check is user input matches username and password of a current index of the loginedOnes array
-				if(username == loginedOnes[i].username && password == loginedOnes[i].password) {
-					alert("Login Successful");
-					window.location.assign("https://atacs.atilim.edu.tr/YeniOgrenci");
-					
-				}
+				if(username != loginedOnes[i].username || password != loginedOnes[i].password) {
 				alert("Login Failed. Try again.");
+				}
+				else {
+					window.location.assign("https://atacs.atilim.edu.tr/YeniOgrenci");	
+					alert("Login Successful");
+				}
 			}
+
 		}
 	    </script>
 
